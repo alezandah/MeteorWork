@@ -1,0 +1,44 @@
+<template name="projects">
+
+	<div class="container" id="spak">
+		<h1>{{pageTitle}}</h1>
+
+		<p>
+			<a href="{{pathFor 'home'}}" class="btn btn-default"><i class="fa fa-plus"></i> Create project</a>
+
+			<a href="{{pathFor 'projects'}}" class="btn btn-danger">All projects</a>
+
+			<a href="{{pathFor 'projectsCategory' category='html'}}" class="btn btn-primary">Technical</a>
+
+			<a href="{{pathFor 'projectsCategory' category='javascript'}}" class="btn btn-success">Chef</a>
+
+			<a href="{{pathFor 'projectsCategory' category='css'}}" class="btn btn-info">Fellow</a>
+		</p>
+
+		<div class="row">
+			{{#each projects}}
+			<div class="col-sm-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<li>{{title}}</li>
+					</div>
+					
+					<div class="panel-body">
+						{{summary}}
+						<br/>
+						<br/>
+						<span class="label label-default">{{category}}</span>
+					</div>
+					<div class="panel-footer">
+						<a href="{{pathFor 'projectDetail' _id=_id}}" class="btn btn-primary">Read more</a>
+					</div>
+				</div>
+			</div>
+			{{else}}
+
+			<li>No projects yet</li>
+
+			{{/each}}
+		</div>	
+	</div>
+</template>

@@ -1,0 +1,33 @@
+<template name="masterLayout">
+	{{> navbar}}
+
+	{{> yield}}
+
+	{{footer}}
+</template>
+
+<template name="navbar">
+<nav class="collapse navbar-collapse navbar-ex1-collapse">
+	<ul class="nav navbar-nav navbar-right">
+		<li>
+			<a href="{{pathFor 'home'}}">
+			Home</a>
+		</li>
+		<li>
+			<a href="{{pathFor 'projects'}}">
+			Projects</a>
+		</li>
+		<li>
+			<a href="{{pathFor 'about'}}">
+			About</a>
+		</li>
+		{{> loginButtons}}
+	</ul>
+</nav>
+</template>
+
+<template name="footer">
+	<footer>
+		<h3>I am your Footer</h3>
+	</footer>
+</template>
